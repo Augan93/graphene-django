@@ -27,7 +27,7 @@ class IngredientNode(DjangoObjectType):
 
 class Query(graphene.ObjectType):
     category = relay.Node.Field(CategoryNode)
-    all_categories = DjangoFilterConnectionField(CategoryNode)
+    all_categories = DjangoFilterConnectionField(CategoryNode)  # With pagination
 
     ingredient = relay.Node.Field(IngredientNode)
     all_ingredients = DjangoFilterConnectionField(IngredientNode)
