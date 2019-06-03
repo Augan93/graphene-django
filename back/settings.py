@@ -124,6 +124,15 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 
+AUTHENTICATION_BACKENDS = [
+    'graphql_jwt.backends.JSONWebTokenBackend',
+    'django.contrib.auth.backends.ModelBackend',
+]
+
+
 GRAPHENE = {
-    'SCHEMA': 'back.schema.schema'
+    'SCHEMA': 'back.schema.schema',
+    'MIDDLEWARE': [
+        'graphql_jwt.middleware.JSONWebTokenMiddleware',
+    ],
 }

@@ -65,8 +65,8 @@ class CreateActor(graphene.Mutation):
     class Arguments:
         input = ActorInput(required=True)
 
-    ok = graphene.Boolean()
-    actor = graphene.Field(ActorType)
+    ok = graphene.Boolean()  # Payload
+    actor = graphene.Field(ActorType)  # Payload
 
     @staticmethod
     def mutate(root, info, input=None):
