@@ -3,9 +3,11 @@ import graphql_jwt
 import ingredients.schema
 import movies.schema
 import user.schema
+import ingredients.old_schema
+import dogs.schema
 
 
-class Query(ingredients.schema.Query, movies.schema.Query, user.schema.Query, graphene.ObjectType):
+class Query(ingredients.old_schema.Query, dogs.schema.Query, movies.schema.Query, user.schema.Query, graphene.ObjectType):
     pass
 
 
